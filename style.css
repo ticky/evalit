@@ -1,0 +1,80 @@
+@font-face{
+  font-family: 'Source Code Pro';
+  font-weight: normal;
+  font-style: normal;
+  src: url('SourceCodePro-Medium.eot') format('embedded-opentype'),
+    url('SourceCodePro-Medium.otf.woff') format('woff'),
+    url('SourceCodePro-Medium.otf') format('opentype'),
+    url('SourceCodePro-Medium.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  color: black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+  font-size: 12pt;
+  min-height: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+}
+
+hr {
+  height: 1.25em;
+  border: none;
+  margin: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 37%,rgba(0,0,0,1) 37%,rgba(0,0,0,1) 45%,rgba(0,0,0,0) 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,1) 55%,rgba(0,0,0,1) 63%,rgba(0,0,0,0) 63%,rgba(0,0,0,0) 100%);
+}
+
+#output {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  margin: 0;
+}
+
+#inputValue {
+  width: 100%;
+  background: transparent;
+  border: 1px solid black;
+  font: inherit;
+}
+
+#output {
+  list-style: none;
+  padding: 1px;
+}
+
+#output li {
+  margin-left: 2ex;
+  line-height: 1.25em;
+}
+
+#output li:before {
+  position: absolute;
+  left: 1em;
+}
+
+#output li.input:before {
+  content: '< ';
+}
+
+#output li.output:before {
+  content: '> ';
+}
+
+#output li.error {
+  color: red;
+}
