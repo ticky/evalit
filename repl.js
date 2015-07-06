@@ -1,6 +1,7 @@
 'use strict';
 
 (function(sandboxedEval) {
+  var input = document.getElementById('input');
   var output = document.getElementById('output');
 
   function createRow(text, type, error) {
@@ -20,8 +21,8 @@
     } else {
       row.appendChild(content);
     }
-    output.appendChild(row);
-    output.scrollTop = output.scrollHeight;
+    output.insertBefore(row, output.lastElementChild);
+    document.body.scrollTop = document.body.scrollHeight;
   }
 
   function runAndShowResult(value) {
@@ -45,7 +46,7 @@
     createRow(resultString, 'output', error);
   }
 
-  document.getElementById('input').addEventListener('submit', function(evt) {
+  input.addEventListener('submit', function(evt) {
     evt.preventDefault();
     evt.stopPropagation();
 

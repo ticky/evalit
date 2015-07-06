@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>EvalIt - JavaScript REPL</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
@@ -13,12 +14,14 @@
         Type some JavaScript in the text field below to see it evaluated!
       </li>
       <li class="output">
-        <hr/>
+        <hr />
+      </li>
+      <li class="input">
+        <form id="input">
+          <input id="inputValue" type="text" autocomplete="off" autofocus placeholder="JavaScript to evaluate" />
+        </form>
       </li>
     </ul>
-    <form id="input">
-      <input id="inputValue" type="text" autocomplete="off" autofocus placeholder="JavaScript to evaluate" />
-    </form>
     <script type="text/javascript" src="repl.js"></script>
   </body>
 </html>
